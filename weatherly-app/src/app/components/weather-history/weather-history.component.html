@@ -1,0 +1,19 @@
+<div class="container" fxLayout="column" fxFlexFill fxLayoutAlign="center center">
+    <ng-template [ngIf]="!isError" [ngIfElse]="Error">
+            <div class="history-group-one" fxFlex="50" fxLayout="row" fxLayout.lt-md="column" fxFlexFill.lt-md>
+                <div class="history-information" fxFlex="50" fxLayoutAlign="center center" fxLayout.lt-md="row" fxFlexFill.lt-md>
+                    <svg id="chart1"></svg>
+                </div>
+                <div class="history-information" fxFlex="50" fxLayoutAlign="center center"  fxLayout.lt-md="row" fxFlexFill.lt-md>
+                    <svg id="chart2"></svg>
+                </div>
+            </div>
+            <div class="history-group-two" fxLayout="row" fxLayoutAlign="center center" fxFlex="50" fxFlexFill.lt-md>
+                <div class="history-information-two" fxFlex="50" fxLayoutAlign="center center" fxFlex.lt-md="100" fxLayout.lt-md="row" fxFlexFill.lt-md>
+                    <svg id="chart3"></svg>
+                </div>
+            </div>
+    </ng-template>
+    <ng-template #Error>
+    </ng-template>
+</div>

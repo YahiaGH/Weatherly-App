@@ -1,0 +1,4 @@
+<mat-button-toggle-group value="{{values[0].name}}">
+    <mat-button-toggle (change)="onValChange($event.value)" value="{{values[0].name}}">{{values[0].val}}</mat-button-toggle>
+    <mat-button-toggle (change)="onValChange($event.value)" value="{{values[1].name}}">{{values[1].val}}</mat-button-toggle>
+</mat-button-toggle-group>

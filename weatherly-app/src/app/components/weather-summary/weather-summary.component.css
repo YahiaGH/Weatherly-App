@@ -1,0 +1,40 @@
+@media screen and (max-width: 1000px){
+    .logo{
+        margin-left: 10%;
+    }
+}
+
+.logo{
+    max-height: 200px;
+    max-width: 240px;
+    min-height: 100px;
+    min-width: 70px;
+    height: 80%;
+    width: 95%;
+}
+
+.degree-text{
+    margin-top: 10%;
+    margin-bottom: 0px;
+    font-size: clamp(30px, 6vw, 400px);
+    margin: 0;
+    padding: 0px;
+}
+
+.degree{
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    min-width: 70px;
+}
+
+.weather-picture{
+    margin-right: 0px;
+}
+
+.desc-text{
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+    font-size: clamp(20px, 1vw, 50px);
+}

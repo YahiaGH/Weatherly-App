@@ -1,0 +1,25 @@
+<div class="container" fxLayout="row" fxLayout.lt-sm="column" [ngStyle]="{'background': isDayTime ? DayColor : NightColor}">
+    <ng-template [ngIf]="!isError" [ngIfElse]="Error || isErrorTemp">
+        <div class="weather-information" fxFlex="50" fxLayout="column">
+            <app-weather-location fxFlex="20" text='{{location.country + ", " + location.city}}' desc='{{"Updated as of " + temperature.timeZone.localtime}}' icon="../assets/svg/earth.svg"></app-weather-location>
+            <app-weather-summary fxFlex="80" degree="{{temperature.currentTemp.temp}}" desc="{{temperature.currentTemp.weatherDesc[0].value}}" weatherIconCode="{{weatherIconCode}}"></app-weather-summary>
+        </div>
+        <div class="weather-details" fxFlex="50" fxLayoutAlign="center center" fxFlexFill fxLayout="row">
+            <div class="weather-details-group" fxLayoutAlign="center center" fxFlexFill fxFlex="50" fxLayout="column">
+                <app-weather-detail fxFlex="34" title="Pressure" value="{{temperature.currentTemp.pressure + ' mb'}}" icon="../../../assets/svg/meter.svg"></app-weather-detail>
+                <app-weather-detail fxFlex="33" title="Dew Point" value="{{temperature.currentTemp.dew + '°'}}" icon="../../../assets/svg/dew.svg"></app-weather-detail>
+                <app-weather-detail fxFlex="33" title="Feels Like" value="{{temperature.currentTemp.FeelsLike + '°'}}" icon="../../../assets/svg/thermometer.svg"></app-weather-detail>
+            </div>
+            <div class="weather-details-group" fxLayoutAlign="center center" fxFlexFill fxFlex="50" fxLayout="column">
+                <app-weather-detail fxFlex="34" title="Wind" value="{{temperature.currentTemp.windspeedKmph + ' kmph'}}" icon="../../../assets/svg/wind.svg"></app-weather-detail>
+                <app-weather-detail fxFlex="33" title="Humidity" value="{{temperature.currentTemp.humidity + '%'}}" icon="../../../assets/svg/humidity.svg"></app-weather-detail>
+                <app-weather-detail fxFlex="33" title="Visibility" value="{{temperature.currentTemp.visibility + ' km'}}" icon="../../../assets/svg/eye.svg"></app-weather-detail>
+            </div>
+        </div>
+    </ng-template>
+    <ng-template #Error>
+        <div class="error" fxFlex="50" fxLayoutAlign="center center">
+            <p>{{errorMessage}}</p>
+        </div>
+    </ng-template>
+</div>

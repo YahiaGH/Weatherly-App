@@ -1,0 +1,15 @@
+.mat-button-toggle{
+    color: white;
+    font-family: 'Fredoka one';
+    background-color: rgb(122, 130, 146);
+}
+
+.mat-button-toggle-group{
+    border-radius: 25px;
+    height: 40px;
+    margin-left: 80px;
+}
+
+.mat-button-toggle-checked{
+    background-color: rebeccapurple;
+}

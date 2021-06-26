@@ -1,0 +1,22 @@
+.item {
+    padding: 1%;
+    text-align: center;
+    border-radius: 25px;
+    cursor: pointer;
+    position: relative;
+}
+
+.item:hover{
+    background-color: rgb(13, 13, 27);
+    opacity: 0.5;
+}
+
+a{
+    text-decoration:none;
+    color: white;
+}
+
+a:active {
+    color:rgb(125, 128, 0);
+    box-shadow: 0 0 5px -1px rgba(188, 234, 255, 0.6);
+}

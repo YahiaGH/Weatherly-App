@@ -1,0 +1,6 @@
+.error{
+    margin: auto;
+    font-size: clamp(15px, 1vw, 50px);
+    padding: 0px;
+    text-align: center;
+}

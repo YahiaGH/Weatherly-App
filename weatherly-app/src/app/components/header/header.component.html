@@ -1,0 +1,20 @@
+<div class="container" fxLayout="row" fxLayoutAlign="start">
+    <div class="container-element" fxFlexAlign="center" fxFlex="1">
+          <a [routerLink]="['/']"><img class="logo" src="{{icon}}"/></a>
+    </div>
+    <div class="title" fxFlex="12" fxFlexAlign="center">
+        <h2>{{text}}</h2>
+    </div>
+    <div class="temp-select" fxFlex="77" fxFlexAlign="center">
+        <app-toggle-button (btnToggle)="toggleTempType()" [values]="[{'name':'Celsius', 'val':'°C'},{'name':'Fahrenheit', 'val':'°F'}]"></app-toggle-button>
+    </div>
+    <div class="ham-menu" fxFlex="10" fxShow.lt-sm fxFlexAlign="center">
+        <app-ham-menu [items]="[{'name':'Home', 'val':'home'},{'name':'About', 'val':'info'},{'name':'Sign In', 'val':'account_circle'},{'name':'Register', 'val':'business'}]"></app-ham-menu>
+    </div>
+    <div class="regular-menu" fxFlex="40" fxHide.lt-sm fxFlexAlign="center" fxLayout="row">
+        <app-header-item text="Home" fxFlex="25" fxFlexAlign="center"></app-header-item>
+        <app-header-item text="About" fxFlex="25" fxFlexAlign="center"></app-header-item>
+        <app-header-item text="Sign In" fxFlex="25" fxFlexAlign="center"></app-header-item>
+        <app-header-item text="Register" fxFlex="25" fxFlexAlign="center"></app-header-item>
+    </div>
+</div>

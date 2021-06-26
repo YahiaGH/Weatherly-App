@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+body {
+  font-family: "Fredoka One";
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  background-color: #18A0FB;
+}
+
+mat-select-panel{
+  background-color: brown!important;
+}

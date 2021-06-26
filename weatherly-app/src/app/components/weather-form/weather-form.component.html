@@ -1,0 +1,19 @@
+<div class="weather-form">
+<form fxLayout="column" (ngSubmit)="onSubmit()" fxLayoutAlign="space-around center">
+    <p>{{title}}</p>
+    <mat-form-field fxFlex="50" fxLayoutAlign="space-around center" appearance="fill">
+        <mat-label>{{dropDownName}}</mat-label>
+        <mat-select [(ngModel)]="city" name="city">
+            <mat-option *ngFor="let item of items" value="{{item.name.split(' ').slice(0,-1).join(' ')}}">{{item.name.split(' ').slice(0,-1).join(' ')}}</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <div class="search-container" fxLayoutAlign="space-around center" fxFlex="50">
+        <button mat-raised-button color="primary">{{buttonName}}</button>
+    </div>
+    <ng-template #error [ngIf]="!validForm">
+           <div>
+               <p class="error">{{errorMessage}}</p>
+            </div>
+    </ng-template>
+</form>
+</div>

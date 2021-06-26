@@ -1,0 +1,51 @@
+.container {
+    padding: 10px;
+    height: 3.5em;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #4A3DDF;
+    width: 100%;
+    z-index: 10;
+    position: fixed;    
+}
+
+.logo{
+    height: 2.5em;
+    width: 2.5em;
+    padding-right: 5px;
+    position: relative;
+}
+
+.title{
+    padding: 40px;
+}
+
+.logo:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+.sidebarIconToggle{
+      display:none
+}
+@media screen and (max-width: 750px) {
+  .sidebarIconToggle{
+      display:block
+   }
+}
+
+.ham-menu{
+    visibility: hidden;
+}
+
+.regular-menu{
+    visibility: visible;
+}
+
+@media screen and (max-width: 599px){
+    .ham-menu{
+        visibility: visible;
+    }
+    .regular-menu{
+        visibility: hidden;
+    }
+}
