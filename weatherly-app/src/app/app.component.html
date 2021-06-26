@@ -1,0 +1,26 @@
+<div class="container-data">
+  <mat-grid-list cols="4" rowHeight="500px">
+    <mat-grid-tile-header>
+      <app-header pageTitle="Weather" text="Weatherly" icon="./assets/svg/weather-app.svg"></app-header>
+    </mat-grid-tile-header>
+    <mat-grid-tile 
+    [colspan] = "4"
+    [rowspan] = "1">
+      <div class="weather-card">
+         <div class="page-title">
+          <h2>Weather</h2>
+        </div>
+          <app-weather-card></app-weather-card>
+      </div>
+    </mat-grid-tile>
+    <mat-grid-tile
+    [colspan] = "4"
+    [rowspan] = "1">
+    </mat-grid-tile>
+    <mat-grid-tile-footer>
+      <div id="footer">
+        <app-footer text="© 2021 Weatherly, Inc."></app-footer>
+      </div>
+    </mat-grid-tile-footer>
+  </mat-grid-list>
+</div>
