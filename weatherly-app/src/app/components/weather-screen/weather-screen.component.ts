@@ -16,7 +16,7 @@ export class WeatherScreenComponent implements OnInit {
 
   location: any = {};
   temperature: any = {};
-  isCelsius: boolean = false;
+  isCelsius: boolean = true;
   isError: boolean = false;
   isDayTime: boolean = false;
   tempSym: string = '°C';
@@ -30,13 +30,23 @@ export class WeatherScreenComponent implements OnInit {
       this.uiService.onSubmitCity().subscribe((city) => {
         this.router.navigate(['/dashboard',city]);
         setTimeout(() => {
-          this.cityChange(city + ',' + this.location.country,this.spinnerService);
+          this.cityChange(city + ',' + this.location.country,this.spinnerService, this.isCelsius);
         }, 1);
+      });
+
+       this.uiService.onToggle().subscribe((value) => {
+        this.isCelsius = value;
+        
+        if (this.isCelsius){
+          this.tempSym = '°C';
+        }else{
+          this.tempSym = '°F';
+        }
       });
    }
 
-  cityChange(city: string, spinner: SpinnerService):void {
-    this.uiService.cityChange(city, spinner);
+  cityChange(city: string, spinner: SpinnerService, isCelsius: boolean):void {
+    this.uiService.cityChange(city, spinner,isCelsius);
   }
 
   ngOnInit(): void {
@@ -59,7 +69,7 @@ export class WeatherScreenComponent implements OnInit {
                 city = this.location.city;
               }
             }
-            this.cityChange(city + ',' + this.location.country,this.spinnerService);
+            this.cityChange(city + ',' + this.location.country,this.spinnerService,this.isCelsius);
           }
       });
       
@@ -72,7 +82,7 @@ export class WeatherScreenComponent implements OnInit {
         city = this.location.city;
       }
 
-      this.cityChange(city + ',' + this.location.country, this.spinnerService);
+      this.cityChange(city + ',' + this.location.country, this.spinnerService,this.isCelsius);
     }, (error) => {
       this.isError = true;
     });

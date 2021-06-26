@@ -16,7 +16,9 @@
     <mat-grid-tile
     [colspan] = "4"
     [rowspan] = "sectionRows">
+    <ng-template #Error [ngIf]="!isError">
         <router-outlet></router-outlet>
+    </ng-template>
     </mat-grid-tile>
     <mat-grid-tile-footer>
       <div id="footer">

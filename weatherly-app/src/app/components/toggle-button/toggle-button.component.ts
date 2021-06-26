@@ -9,6 +9,8 @@ export class ToggleButtonComponent implements OnInit {
 
   @Input() values: {name: string, val: string}[] = [];
   @Output() btnToggle = new EventEmitter();
+
+  currentValue: string = 'Celsius';
   
   constructor() { }
 
@@ -16,6 +18,9 @@ export class ToggleButtonComponent implements OnInit {
   }
 
   onValChange(value : any): void{
-     this.btnToggle.emit();
+    if(value !== this.currentValue){
+      this.btnToggle.emit();
+      this.currentValue = value;
+    }
   }
 }

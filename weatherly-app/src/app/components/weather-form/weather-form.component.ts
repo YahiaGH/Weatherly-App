@@ -23,7 +23,7 @@ export class WeatherFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.locationService.getPosition().subscribe((location) => {
-      this.city = location.regionName.split(' ');
+      this.city = location.regionName.split(' ')[0];
       this.items = State.getStatesOfCountry(location.countryCode);
       console.log(this.items);
     }, (error) => {

@@ -23,8 +23,8 @@ export class UiService {
     return this.subjectTempType.asObservable();
   }
 
-  cityChange(city: string, spinner: SpinnerService): void {
-    this.subjectChangeCity.next([city,spinner]);
+  cityChange(city: string, spinner: SpinnerService, isCelsius: boolean): void {
+    this.subjectChangeCity.next([city,spinner,isCelsius]);
   }
 
   submitCity(city: string): void{

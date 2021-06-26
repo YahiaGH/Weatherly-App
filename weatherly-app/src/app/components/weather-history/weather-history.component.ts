@@ -20,7 +20,7 @@ export class WeatherHistoryComponent implements OnInit {
 
   chartWidth: number = 500;
   chartHeight: number = 355;
-  isCelsius: boolean = true;
+  isCelsius!: boolean;
   tempSym: string = '°C';
   tempHistory: {} = {};
   tempStat: {} = {};
@@ -142,7 +142,10 @@ export class WeatherHistoryComponent implements OnInit {
       
       this.location.city = value[0].split(',')[0];
       this.location.country = value[0].split(',')[1];
+      this.isCelsius = value[2]; 
+      this.tempSym = this.isCelsius ? '°C' : '°F';
 
+      console.log(this.isCelsius);
       this.tempService.getWeatherHistory(this.location.city + ',' + this.location.country).subscribe((tempHistory: any) => {
         
         this.tempHistory = this.processBarData(tempHistory.data.ClimateAverages[0].month);
